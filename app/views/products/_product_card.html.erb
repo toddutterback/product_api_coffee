@@ -1,14 +1,25 @@
-<div class="col s12 m3">
+<div class="col s12 m4">
   <div class="card teal lighten-1">
     <div class="card-content white-text">
       <span class="card-title"><%= @product['name'] %></span>
       <p>
-        <%= @product['description'] %>
+        <ul>
+          <li>Product: <%= @product[:name] %></li>
+          <li>Base Price: $<%= @product[:base_price] %>.00</li>
+          <li>Description: <%= @product[:description] %> </li>
+          <div id="show_product_info" class='hide'>
+            <li>Quantity on hand: <%= @product[:quanity_on_hand] %></li>
+            <li>Color: <%= @product[:color] %></li>
+            <li>Weight: <%= @product[:weight] %> </li>
+            <li>Other Attributes: <%= @product[:other_attributes] %> </li>
+          </div>
+        </ul>
       </p>
     </div>
     <div class="card-action">
-      <a href="#">This is a link</a>
-      <a href="#">This is a link</a>
+      <a class='show_product' href=<%= @product[:id] %> > Show Product </a>
+      <a class='edit_product' href='#' data-product-id= <%= @product[:id] %> > Edit Product </a>
+      <a href="#">Delete Product</a>
     </div>
   </div>
 </div>
