@@ -41,19 +41,23 @@ $(document).ready ->
         return
     return
 
+
   $(document).on 'click', '.show_product', (e) ->
     e.preventDefault()
     showForm = $('#show_product_info')
-      $.ajax
-        type: 'GET'
-        url: baseUrl + '/products/' + $(this.data)('product-id')
-        success: (data) ->
-          product = data.product
-          showForm.removeClass 'hide'
-          return
-        error: (data) ->
-          console.log data
-          return
-       return   
+    showForm.removeClass 'hide'
+
+
+  # $(document).on 'click', '.show_product', (e) ->
+  #   e.preventDefault()
+  #   showForm = $('#show_product_info')
+  #     $.ajax
+  #       type: 'GET'
+  #       url: baseUrl + '/products/' + $(this.data)('product-id')
+  #       success: (data) ->
+  #         showForm.removeClass 'hide'
+  #       error: (data) ->
+  #         console.log data
+
 
 
